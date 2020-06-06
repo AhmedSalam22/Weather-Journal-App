@@ -1,6 +1,7 @@
 # Weather-Journal App Project
 
 ## Overview
+My second project on Web professional nanodegree EGYPT-FWD
 This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
 ## Instructions
