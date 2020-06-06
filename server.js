@@ -25,3 +25,15 @@ app.use(express.static('website'));
 // Setup Server
 const port = 3000;
 const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)})
+
+
+
+app.get("/get" , (req , res) => res.send(projectData));
+app.post("/addData" , (req , res) => { 
+                                        projectData["temperature"]=req.body.temperature;
+                                        projectData["date"]=req.body.date;
+                                        projectData["userResponse"]=req.body.userResponse;
+                                        res.send(projectData);
+                                       console.log(projectData);
+                                    }
+        );
