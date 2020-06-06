@@ -1,6 +1,6 @@
 /* Global Variables */
-const myAPI = "&appid=799e56cf0be5e30fbfd7891d2e05ae27";
-let baseURL = "http://api.openweathermap.org/data/2.5/weather?zip="
+const myAPI = "&appid=799e56cf0be5e30fbfd7891d2e05ae27&units=metric";
+const baseURL = "http://api.openweathermap.org/data/2.5/weather?zip="
 
 
 const button = document.getElementById("generate");
@@ -8,7 +8,7 @@ button.addEventListener("click" , perfromAction)
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = (d.getMonth()+1) + '.'+ d.getDate()+'.'+ d.getFullYear();
 
 
 function perfromAction(){
@@ -48,8 +48,8 @@ const updateUI = async ()=>{
   // console.log(response);
   try {
     const allData = await response.json()
-    console.log("alldasd" , allData)
-    const temp = document.getElementById("temp").innerHTML = allData.temperature;
+    console.log("alldata" , allData)
+    const temp = document.getElementById("temp").innerHTML = `${allData.temperature} Celcius`;
     const date = document.getElementById("date").innerHTML = allData.date;
     const content = document.getElementById("content").innerHTML = allData.userResponse;
 
